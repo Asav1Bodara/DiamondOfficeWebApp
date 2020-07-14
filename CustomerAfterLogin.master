@@ -1,0 +1,276 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="CustomerAfterLogin.master.cs" Inherits="CustomerAfterLogin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="UTF-8" />
+    <!-- this line will appear only if the website is visited with an iPad -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2, user-scalable=yes" />
+    <title>Customer Portal</title>
+ <!-- RESET STYLESHEET -->
+    <link rel="stylesheet" type="text/css" media="all" href="css/reset.css" />
+    <!-- BOOTSTRAP STYLESHEET -->
+    <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap.css" />
+    <!-- MAIN THEME STYLESHEET -->
+    <link rel="stylesheet" type="text/css" media="all" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="css/ss.css" />
+    <link rel='stylesheet' href='css/custom.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Oswald%7CDroid+Sans%7CPlayfair+Display%7COpen+Sans+Condensed:300,400,800%3A300%7CRokkitt%7CShadows+Into+Light%7CMaven+Pro:400,700%7CAbel%7CMontez' type='text/css' media='all' />
+    <link rel='stylesheet' href='css/responsive.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='js/thickbox/thickbox.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='css/tipsy.css' type='text/css' media='all' />
+
+    <link rel='stylesheet' href='css/font-awesome.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='portfolios/full-description/css/style.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='portfolios/slide-detail/css/style.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='css/shortcodes.css' type='text/css' media='all' />
+
+    <link rel='stylesheet' href='css/colorbox.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='css/buttons/mfast-3.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='sliders/flexslider/css/flexslider.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='sliders/flexslider-elegant/css/slider.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='sliders/revolution-slider/css/slider.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='sliders/revolution-slider/rs-plugin/css/settings.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='sliders/revolution-slider/rs-plugin/css/captions.css' type='text/css' media='all' />
+
+    <!-- [favicon] begin -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!-- [favicon] end -->
+
+    <!-- Touch icons more info: http://mathiasbynens.be/notes/touch-icons -->
+    <!-- For iPad3 with retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x.png" />
+    <!-- For first- and second-generation iPad: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x.png" />
+    <!-- For first- and second-generation iPad: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x.png">
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-57x.png" />
+
+    <script type='text/javascript' src='js/jquery/jquery.js'></script>
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <%--Back Button Disable Code--%>
+    <script type="text/javascript" language="javascript">
+        function DisableBackButton() {
+            window.history.forward()
+        } DisableBackButton();
+        window.onload = DisableBackButton;
+        window.onpageshow = function (evt) {
+            if (evt.persisted)
+                DisableBackButton()
+        }
+        window.onunload = function () { void (0) }
+    </script>
+    <%--Back Button Disable Code--%>
+</head>
+<body class="home page no_js responsive stretched">
+    <form id="form1" runat="server">
+         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <!-- START BG SHADOW -->
+<div class="bg-shadow">
+<!-- START WRAPPER -->
+<div id="wrapper" class="container group">
+<!-- START TOP BAR -->
+
+<!-- START TOP BAR -->
+<div id="topbar">
+    <div class="container">
+        <div class="row">
+            <div id="last-tweets-3" class="widget-first span6 widget last-tweets">
+                <h3>Last Tweets</h3>
+                <div class="list-tweets-3"></div>
+
+                <script type="text/javascript">
+                    jQuery(function ($) {
+                        $('#last-tweets-3 .list-tweets-3').tweetable({
+                            listClass: 'tweets-widget-3',
+                            username: 'YIW',
+                            time: false,
+                            limit: 3,
+                            replies: false
+                        });
+                    });
+                </script>
+
+            </div>
+
+            <div id="text-8" class=" widget-last span6 widget widget_text">
+                <div class="textwidget">
+                    <a href="# " class="socials-small facebook-small" title="Facebook"  >facebook</a>
+
+                    <a href="#" class="socials-small rss-small" title="Rss"  >rss</a>
+
+                    <a href="#" class="socials-small twitter-small" title="Twitter"  >twitter</a>
+
+                    <a href="#" class="socials-small google-small" title="Google"  >google</a>
+
+                    <a href="#" class="socials-small linkedin-small" title="Linkedin"  >linkedin</a>
+
+                    <a href="#" class="socials-small pinterest-small" title="Pinterest"  >pinterest</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+                    jQuery(function ($) {
+                        var twitterSlider = function () {
+                            $('#topbar .last-tweets ul').addClass('slides');
+                            $('#topbar .last-tweets').flexslider({
+                                animation: "fade",
+                                slideshowSpeed: 5 * 1000,
+                                animationDuration: 700,
+                                directionNav: false,
+                                controlNav: false,
+                                keyboardNav: false
+                            });
+                        };
+                        $('#topbar .last-tweets > div').bind('tweetable_loaded', function () {
+                            twitterSlider();
+                        });
+                    });
+</script>
+
+<!-- END TOP BAR -->
+
+<!-- START HEADER -->
+<div id="header" class="group">
+    <div class="group container">
+        <div class="row">
+            <div class="span12">
+                <div class="row">
+                   
+                  </div>
+                    <!-- END LOGO -->                     
+                  </div>
+               <div class="menu">
+                   <ul id="nav" class="sf-menu">
+                       <li class="nav-icon-set current_page_item">
+                                    <a href="Products.aspx">
+                                        See our products
+                                        <div style="position:absolute; left: 50%;">
+                                            <span class="triangle">&nbsp;</span>
+                                        </div>
+                                    </a>
+                                </li>
+                       <li class="nav-icon-tags current_page_item">
+                                    <a href="Demand.aspx">
+                                        Check the prices
+                                        <div style="position:absolute; left: 50%;">
+                                            <span class="triangle">&nbsp;</span>
+                                        </div>
+                                    </a>
+                                </li>
+                       <li class="nav-icon-chart current_page_item">
+                                    <a href="CustomerDashboard.aspx">
+                                        Invoices
+                                        <div style="position:absolute; left: 50%;">
+                                            <span class="triangle">&nbsp;</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="nav-icon-user current_page_item">
+                                    <a href="Default.aspx">
+                                        Logout
+                                        <div style="position:absolute; left: 50%;">
+                                            <span class="triangle">&nbsp;</span>
+                                        </div>
+                                    </a>
+                                </li>                        
+                            </ul>        
+                            
+               </div>
+            </div>
+        </div>
+    </div>
+   
+</div>
+<!-- END HEADER -->
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+  <div id="footer">
+    <div class="container">
+        <div class="row">
+            <div>             
+                <div  class="widget span3 contact-info">
+                    <h3>Get in touch</h3>
+                    <div class="sidebar-nav">
+                        <ul>
+                            <li>
+                                <i class="icon-map-marker" style="color:#000;font-size:12px;width:12px;height:12px"></i>
+                                <span>Address:</span> 
+
+                            </li>
+                            <li>
+                                <i class="icon-phone" style="color:#000;font-size:12px;width:12px;height:12px"></i>
+                                <span>Mobile:</span> 
+                            </li>
+                            <li>
+                                <i class="icon-print" style="color:#000;font-size:12px;width:12px;height:12px"></i>
+                                <span>Fax:</span> 
+
+                            </li>
+                            <li>
+                                <i class="icon-envelope" style="color:#000;font-size:12px;width:12px;height:12px"></i>
+                                <span>Email:</span> 
+                            </li>
+                        </ul>
+                    </div>
+                </div>               
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END FOOTER -->
+
+<!-- START COPYRIGHT -->
+<div id="copyright">
+        <div class="row">
+    <div class="container">
+            <div class="left span6">
+                <p>&copy;2018 Diamond Office Web Application All rights reserved.&nbsp;&nbsp;  Designed By Asav, Reecha, Akanksha</p>
+            </div>
+            <div class="right span6">
+                Powered by
+                    <strong>The Infinities</strong>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END COPYRIGHT -->
+
+</div>
+<!-- END WRAPPER -->
+
+</div>
+<!-- END BG SHADOW -->
+
+
+
+<!-- START CUSTOM SCRIPT -->
+
+<!-- END CUSTOM SCRIPT -->
+
+<script type='text/javascript' src='js/jquery.colorbox-min.js'></script>
+<script type='text/javascript' src='js/jquery.flexslider-min.js'></script>
+<script type='text/javascript' src='js/jquery.tweetable.js'></script>
+<script type='text/javascript' src='js/jquery.superfish.js'></script>
+<script type='text/javascript' src='js/jquery.themepunch.plugins.min.js'></script>
+<script type='text/javascript' src='js/jquery.themepunch.revolution.js'></script>
+<script type='text/javascript' src='portfolios/filterable/js/jquery.filterable.js'></script>
+<script type='text/javascript' src='js/jquery.tipsy.js'></script>
+<script type='text/javascript' src='js/responsive.js'></script>
+<script type='text/javascript' src='js/jquery.mobilemenu.js'></script>
+<script type='text/javascript' src='js/shortcodes.js'></script>
+<script type='text/javascript' src='js/jquery/jquery.masonry.min.js'></script>
+<script type='text/javascript' src='js/jquery.custom.js'></script>
+    </form>
+</body>
+</html>

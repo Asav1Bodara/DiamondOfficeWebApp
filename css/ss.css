@@ -1,0 +1,10 @@
+﻿.gridview {
+    border-collapse:collapse;
+    text-align:center;
+}
+
+.gridview td{
+    padding:10px;
+    border:1px solid black;
+
+}
